@@ -1,5 +1,6 @@
 import React from 'react';
-import { createUser, getUser } from '../services/userAPI';
+import { Redirect } from 'react-router-dom';
+import { createUser } from '../services/userAPI';
 
 class Login extends React.Component {
   constructor() {
@@ -7,7 +8,8 @@ class Login extends React.Component {
     this.state = {
       isButtonDisabled: true,
       userName: '',
-      // loading: false,
+      loading: false,
+      redirect: false,
     };
   }
 
@@ -26,17 +28,17 @@ class Login extends React.Component {
   }
 
   handleButtonClick = async () => {
+    this.setState({ loading: true });
     const { userName } = this.state;
     await createUser({ name: userName });
-    console.log(await getUser());
+    this.setState({ loading: false, redirect: true });
   }
 
   render() {
-    const { isButtonDisabled } = this.state;
+    const { isButtonDisabled, loading, redirect } = this.state;
     return (
       <div data-testid="page-login" className="page-login">
         <h1>Login</h1>
-
         <form onSubmit={ this.handleButtonClick }>
           <label htmlFor="userName">
             <input
@@ -57,6 +59,8 @@ class Login extends React.Component {
             Entrar
           </button>
         </form>
+        { loading && <h3>Carregando...</h3> }
+        { redirect && <Redirect to="/search" /> }
       </div>
     );
   }
