@@ -1,5 +1,6 @@
 import React from 'react';
 import { getUser } from '../services/userAPI';
+import Navigation from './Navigation';
 
 class Header extends React.Component {
   constructor() {
@@ -25,6 +26,7 @@ class Header extends React.Component {
       <header data-testid="header-component">
         <h1>TrybeTunes</h1>
         <p data-testid="header-user-name">{ loading ? 'Carregando...' : userName }</p>
+        <Navigation />
       </header>
     );
   }
