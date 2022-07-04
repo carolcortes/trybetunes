@@ -17,10 +17,6 @@ class Login extends React.Component {
     // Verificar erro no teste 02: Can't perform a React state update on an unmounted component.
   }
 
-  componentWillUnmount() {
-    // Verificar erro no teste 02
-  }
-
   validateButton = () => {
     const { userName } = this.state;
     const minLength = 3;
