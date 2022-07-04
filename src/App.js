@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import UsersPage from './components/UsersPage';
+import Content from './components/Content';
 import Login from './pages/Login';
 
 class App extends React.Component {
@@ -9,7 +9,7 @@ class App extends React.Component {
       <div>
         <Switch>
           <Route exact path="/" component={ Login } />
-          <UsersPage />
+          <Content />
         </Switch>
       </div>
     );

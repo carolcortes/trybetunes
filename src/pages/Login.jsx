@@ -17,6 +17,10 @@ class Login extends React.Component {
     // Verificar erro no teste 02: Can't perform a React state update on an unmounted component.
   }
 
+  componentWillUnmount() {
+    // Verificar erro no teste 02
+  }
+
   validateButton = () => {
     const { userName } = this.state;
     const minLength = 3;
@@ -35,7 +39,8 @@ class Login extends React.Component {
     this.setState({ loading: true });
     const { userName } = this.state;
     await createUser({ name: userName });
-    this.setState({ loading: false, redirect: true });
+    this.setState({ loading: false },
+      () => this.setState({ redirect: true }));
   }
 
   render() {

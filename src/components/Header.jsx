@@ -1,6 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import Navigation from './Navigation';
 
 class Header extends React.Component {
   constructor() {
@@ -26,7 +26,11 @@ class Header extends React.Component {
       <header data-testid="header-component">
         <h1>TrybeTunes</h1>
         <p data-testid="header-user-name">{ loading ? 'Carregando...' : userName }</p>
-        <Navigation />
+        <nav>
+          <NavLink data-testid="link-to-search" to="/search">Pesquisar</NavLink>
+          <NavLink data-testid="link-to-favorites" to="/favorites">Favoritas</NavLink>
+          <NavLink data-testid="link-to-profile" to="/profile">Perfil</NavLink>
+        </nav>
       </header>
     );
   }
