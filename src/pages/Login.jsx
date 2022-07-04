@@ -21,7 +21,7 @@ class Login extends React.Component {
     });
   }
 
-  handleInput = ({ target }) => {
+  handleInputChange = ({ target }) => {
     this.setState({
       userName: target.value,
     }, this.validateButton);
@@ -46,7 +46,7 @@ class Login extends React.Component {
               data-testid="login-name-input"
               placeholder="Nome"
               className="userName"
-              onChange={ this.handleInput }
+              onChange={ this.handleInputChange }
               name="userName"
             />
           </label>
