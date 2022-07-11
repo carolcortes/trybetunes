@@ -1,12 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { addSong } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: false,
+      favoriteCheck: false,
+    };
+  }
+
+  handleFavoriteSong = async ({ target }) => {
+    const { trackName, previewUrl, trackId } = this.props;
+    this.setState({ loading: true });
+    if (target.checked) {
+      await addSong({ trackName, previewUrl, trackId });
+      this.setState({ loading: false, favoriteCheck: true });
+    } else {
+      this.setState({ loading: false, favoriteCheck: false });
+    }
+  }
+
   render() {
-    const { trackName, previewUrl } = this.props;
+    const { trackName, previewUrl, trackId } = this.props;
+    const { loading, favoriteCheck } = this.state;
     return (
       <div>
-        <h3>{ trackName }</h3>
+        <h4>{ trackName }</h4>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
@@ -14,6 +35,17 @@ class MusicCard extends React.Component {
           <code>audio</code>
           .
         </audio>
+        <label htmlFor={ trackId } data-testid={ `checkbox-music-${trackId}` }>
+          Favorita
+          <input
+            type="checkbox"
+            id={ trackId }
+            name={ trackId }
+            onChange={ this.handleFavoriteSong }
+            checked={ favoriteCheck }
+          />
+        </label>
+        { loading && <p>Carregando...</p> }
       </div>
     );
   }
