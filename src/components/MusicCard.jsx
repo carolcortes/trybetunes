@@ -23,7 +23,7 @@ class MusicCard extends React.Component {
   }
 
   handleFavoriteSong = async ({ target }) => {
-    const { trackName, previewUrl, trackId } = this.props;
+    const { trackName, previewUrl, trackId, getFavoritesList } = this.props;
     this.setState({ loading: true });
     if (target.checked) {
       await addSong({ trackName, previewUrl, trackId });
@@ -31,6 +31,7 @@ class MusicCard extends React.Component {
     } else {
       await removeSong({ trackName, previewUrl, trackId });
       this.setState({ loading: false, favoriteCheck: false });
+      if (getFavoritesList) getFavoritesList();
     }
   }
 
@@ -39,25 +40,29 @@ class MusicCard extends React.Component {
     const { loading, favoriteCheck } = this.state;
     return (
       <div>
-        <h4>{ trackName }</h4>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
-          <code>audio</code>
-          .
-        </audio>
-        <label htmlFor={ trackId } data-testid={ `checkbox-music-${trackId}` }>
-          Favorita
-          <input
-            type="checkbox"
-            id={ trackId }
-            name={ trackId }
-            onChange={ this.handleFavoriteSong }
-            checked={ favoriteCheck }
-          />
-        </label>
-        { loading && <p>Carregando...</p> }
+        { loading ? <p>Carregando...</p>
+          : (
+            <div>
+              <h4>{ trackName }</h4>
+              <audio data-testid="audio-component" src={ previewUrl } controls>
+                <track kind="captions" />
+                O seu navegador não suporta o elemento
+                {' '}
+                <code>audio</code>
+                .
+              </audio>
+              <label htmlFor={ trackId } data-testid={ `checkbox-music-${trackId}` }>
+                Favorita
+                <input
+                  type="checkbox"
+                  id={ trackId }
+                  name={ trackId }
+                  onChange={ this.handleFavoriteSong }
+                  checked={ favoriteCheck }
+                />
+              </label>
+            </div>
+          ) }
       </div>
     );
   }
