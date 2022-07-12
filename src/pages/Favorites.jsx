@@ -1,4 +1,3 @@
-import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 import React from 'react';
 import MusicCard from '../components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
@@ -38,22 +37,22 @@ class Favorites extends React.Component {
     const { favoritesList, loading } = this.state;
     return (
       <div data-testid="page-favorites">
-        { loading && <h1>Carregando...</h1> }
-        { !loading
-        && (
-          <div>
-            <h1>Músicas Favoritas:</h1>
-            { favoritesList.map(({ trackName, previewUrl, trackId }) => (
-              <MusicCard
-                key={ trackId }
-                trackName={ trackName }
-                previewUrl={ previewUrl }
-                trackId={ trackId }
-                favoritesList={ favoritesList }
-                getFavoritesList={ this.getFavoritesList }
-              />
-            )) }
-          </div>)}
+        <h1>Músicas Favoritas:</h1>
+        {/* { loading && <h1>Carregando...</h1> } */}
+        { loading ? <h1>Carregando...</h1>
+          : (
+            <div>
+              { favoritesList.map(({ trackName, previewUrl, trackId }) => (
+                <MusicCard
+                  key={ trackId }
+                  trackName={ trackName }
+                  previewUrl={ previewUrl }
+                  trackId={ trackId }
+                  favoritesList={ favoritesList }
+                  getFavoritesList={ this.getFavoritesList }
+                />
+              )) }
+            </div>)}
       </div>
     );
   }
