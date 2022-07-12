@@ -11,6 +11,17 @@ class MusicCard extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.checkFavoritesSongs();
+  }
+
+  checkFavoritesSongs = async () => {
+    const { favoritesList, trackId } = this.props;
+    this.setState({
+      favoriteCheck: favoritesList.some((favorite) => favorite.trackId === trackId),
+    });
+  }
+
   handleFavoriteSong = async ({ target }) => {
     const { trackName, previewUrl, trackId } = this.props;
     this.setState({ loading: true });
