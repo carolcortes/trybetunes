@@ -21,8 +21,8 @@ class Album extends React.Component {
   getMusicList = async () => {
     const { match: { params: { id } } } = this.props;
     const musicList = await getMusics(id);
-    const data = await getFavoriteSongs();
-    this.setState({ favoritesList: data });
+    const favoriteData = await getFavoriteSongs();
+    this.setState({ favoritesList: favoriteData });
     this.setState({ musicList, loading: false });
   }
 
