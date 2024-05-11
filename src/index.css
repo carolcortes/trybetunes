@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.App {
+  height: 100vh;
+}
+
 .loading {
   align-items: center;
   display: flex;
