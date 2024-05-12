@@ -1,0 +1,13 @@
+.main-routes {
+  display: flex;
+  height: 100%;
+}
+
+.main-routes_content {
+  flex: 4;
+}
+
+.sidebar {
+  flex: 1;
+  max-width: 220px;
+}
