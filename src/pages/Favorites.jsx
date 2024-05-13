@@ -15,14 +15,6 @@ class Favorites extends React.Component {
     this.getFavoritesList();
   }
 
-  // componentDidUpdate() {
-  //   if () this.getFavoritesList();
-  // }
-
-  // componentWillUnmount() {
-  //   this.unmonted = true;
-  // }
-
   getFavoritesList = async () => {
     this.setState({ loading: true });
     const favoriteData = await getFavoriteSongs();
@@ -38,7 +30,6 @@ class Favorites extends React.Component {
     return (
       <div data-testid="page-favorites">
         <h1>Músicas Favoritas:</h1>
-        {/* { loading && <h1>Carregando...</h1> } */}
         { loading ? <h1>Carregando...</h1>
           : (
             <div>

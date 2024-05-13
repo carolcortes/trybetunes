@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { IoSearchOutline } from 'react-icons/io5';
 import { LuStar } from 'react-icons/lu';
 import { FaRegCircleUser } from 'react-icons/fa6';
+import ReactLoading from 'react-loading';
 import Logo from '../../assets/logo.png';
 import DefaultAvatar from '../../assets/default_avatar.png';
 import { getUser } from '../../services/userAPI';
@@ -49,7 +50,11 @@ class Sidebar extends React.Component {
         <div className="sidebar_user">
           <img src={ DefaultAvatar } alt="User Avatar" className="sidebar_user-avatar" />
           <p data-testid="sidebar-user-name" className="sidebar_user-name">
-            {loading ? 'Carregando...' : userName}
+            {loading ? (
+              <ReactLoading type="bars" height="34px" width="34px" color="#003be5" />
+            ) : (
+              userName
+            )}
           </p>
         </div>
       </div>
