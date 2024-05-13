@@ -1,0 +1,43 @@
+.page-favorites {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+
+.page-favorites_header {
+  align-items: center;
+  background: linear-gradient(153deg, #003be5 9.78%, #00d5e2 48.22%);
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+  min-height: 33%;
+}
+
+.page-favorites_title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.page-favorites_content {
+  align-items: center;
+  background-color: #eff3f9;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.page-favorites_content.loading {
+  height: 67%;
+}
+
+.page-favorites_tracks-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
