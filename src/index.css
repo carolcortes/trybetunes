@@ -14,6 +14,7 @@ code {
 .App {
   height: 100vh;
   font-family: 'Epilogue', sans-serif;
+  background-color: #eff3f9;
 }
 
 .loading {
@@ -22,48 +23,38 @@ code {
   justify-content: center;
 }
 
-/* Estilizando a barra de rolagem para navegadores WebKit */
-/* Largura e altura */
+/* Scroll bar */
 ::-webkit-scrollbar {
-  width: 8px; /* Largura da barra de rolagem */
-  height: 10px; /* Altura da barra de rolagem */
+  width: 8px;
+  height: 10px;
 }
 
-/* Cor do fundo */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Cor de fundo da barra de rolagem */
+  background: #f1f1f1;
 }
 
-/* Cor do indicador (o "botão" que você move) */
 ::-webkit-scrollbar-thumb {
-  background: #888; /* Cor do indicador da barra de rolagem */
-  border-radius: 5px; /* Raio de borda para suavizar as bordas */
+  background: #888;
+  border-radius: 5px;
 }
 
-/* Hover do indicador */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Cor do indicador ao passar o mouse */
+  background: #555;
 }
 
-/* Estilizando a barra de rolagem para navegadores Gecko */
-/* Largura e altura */
 ::-moz-scrollbar {
-  width: 8px; /* Largura da barra de rolagem */
-/* Altura da barra de rolagem */
+  width: 8px;
 }
 
-/* Cor do fundo */
 ::-moz-scrollbar-track {
-  background: #f1f1f1; /* Cor de fundo da barra de rolagem */
+  background: #f1f1f1;
 }
 
-/* Cor do indicador (o "botão" que você move) */
 ::-moz-scrollbar-thumb {
-  background: #888; /* Cor do indicador da barra de rolagem */
-  border-radius: 5px; /* Raio de borda para suavizar as bordas */
+  background: #888;
+  border-radius: 5px;
 }
 
-/* Hover do indicador */
 ::-moz-scrollbar-thumb:hover {
-  background: #555; /* Cor do indicador ao passar o mouse */
+  background: #555;
 }

@@ -1,6 +1,6 @@
 .music-card {
   align-items: center;
-  border-bottom: 1px solid #444955;
+  border-bottom:  1.5px solid #4449556c;
   display: flex;
   justify-content: space-between;
   max-width: 900px;
@@ -32,6 +32,7 @@
 .music-card_favorite-label {
   cursor: pointer;
   font-size: 22px;
+  margin-left: 12px;
   width: 36px;
 }
 
