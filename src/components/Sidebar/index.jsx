@@ -49,13 +49,20 @@ class Sidebar extends React.Component {
         </nav>
         <div className="sidebar_user">
           <img src={ DefaultAvatar } alt="User Avatar" className="sidebar_user-avatar" />
-          <p data-testid="sidebar-user-name" className="sidebar_user-name">
+          <div data-testid="sidebar-user-name" className="sidebar_user-name">
             {loading ? (
-              <ReactLoading type="bars" height="34px" width="34px" color="#003be5" />
+              <ReactLoading
+                type="bars"
+                height="32px"
+                width="32px"
+                color="#003be5"
+              />
             ) : (
-              userName
+              <p>
+                {userName}
+              </p>
             )}
-          </p>
+          </div>
         </div>
       </div>
     );
