@@ -29,7 +29,10 @@ class Profile extends React.Component {
       userInfo: { name, email, image, description },
     } = this.state;
     return (
-      <div data-testid="page-profile" className="page-profile">
+      <div
+        data-testid="page-profile"
+        className={`page-profile ${loading ? 'loading' : ''}`}
+      >
         {loading ? (
           <Loading />
         ) : (

@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.page-profile.loading {
+  height: 100%;
+}
+
 .page-profile_container {
   height: fit-content;
   width: 100%;
