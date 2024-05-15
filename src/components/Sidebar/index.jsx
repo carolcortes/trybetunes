@@ -16,6 +16,7 @@ class Sidebar extends React.Component {
     this.state = {
       loading: true,
       userName: '',
+      userImage: '',
     };
   }
 
@@ -25,11 +26,14 @@ class Sidebar extends React.Component {
 
   getUserName = async () => {
     const userInfo = await getUser();
-    this.setState({ userName: userInfo.name }, this.setState({ loading: false }));
+    this.setState(
+      { userName: userInfo.name, userImage: userInfo.image },
+      this.setState({ loading: false }),
+    );
   };
 
   render() {
-    const { loading, userName } = this.state;
+    const { loading, userName, userImage } = this.state;
     return (
       <div data-testid="sidebar-component" className="sidebar">
         <img src={ Logo } alt="Trybetunes logo" className="sidebar_logo" />
@@ -48,19 +52,19 @@ class Sidebar extends React.Component {
           </NavLink>
         </nav>
         <div className="sidebar_user">
-          <img src={ DefaultAvatar } alt="User Avatar" className="sidebar_user-avatar" />
+          {!loading && (
+            <img
+              src={ userImage || DefaultAvatar }
+              alt="User Avatar"
+              className="sidebar_user-avatar"
+            />
+          )}
+
           <div data-testid="sidebar-user-name" className="sidebar_user-name">
             {loading ? (
-              <ReactLoading
-                type="bars"
-                height="32px"
-                width="32px"
-                color="#003be5"
-              />
+              <ReactLoading type="bars" height="32px" width="32px" color="#003be5" />
             ) : (
-              <p>
-                {userName}
-              </p>
+              <p>{userName}</p>
             )}
           </div>
         </div>

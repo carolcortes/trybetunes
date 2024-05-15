@@ -50,7 +50,7 @@ class Profile extends React.Component {
               <div className="page-profile_data-column">
                 <h4 className="page-profile_data-title">E-mail</h4>
                 {email ? (
-                  <p>{email}</p>
+                  <p className="data-email">{email}</p>
                 ) : (
                   <p className="page-profile_no-data">Não há e-mail cadastrado</p>
                 )}
@@ -58,7 +58,7 @@ class Profile extends React.Component {
               <div className="page-profile_data-column">
                 <h4>Descrição</h4>
                 {description ? (
-                  <p>{email}</p>
+                  <p className="data-description">{description}</p>
                 ) : (
                   <p className="page-profile_no-data">Nos conte sobre você</p>
                 )}

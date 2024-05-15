@@ -2,14 +2,13 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: fit-content;
   justify-content: center;
   width: 100%;
 }
 
 .page-profile_container {
-  height: 100%;
-  padding-bottom: 12px;
+  height: fit-content;
   width: 100%;
 }
 
@@ -37,6 +36,7 @@
   gap: 20px;
   margin-left: 280px;
   margin-top: 20px;
+  padding-bottom: 24px;
 }
 
 .page-profile_data-column {
@@ -57,9 +57,18 @@
   display: flex;
   font-size: 14px;
   font-weight: 400;
-  height: 24px;
   margin: 0;
+  min-height: 24px;
   text-transform: capitalize;
+}
+
+.data-email {
+  text-transform: lowercase !important;
+}
+
+.data-description {
+  line-height: 20px;
+  max-width: 80%;
 }
 
 .page-profile_no-data {
