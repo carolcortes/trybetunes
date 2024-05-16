@@ -1,0 +1,52 @@
+.music-card {
+  align-items: center;
+  border-bottom:  1.5px solid #4449556c;
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  width: 80%;
+}
+
+.music-card_container {
+  align-items: center;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  padding: 0px 18px;
+  width: 100%;
+}
+
+.music-card_track-name {
+  color: #001813;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 380px;
+  min-width: 100px;
+  width: 50%;
+}
+
+.music-card_favorite-input {
+  display: none;
+}
+
+.music-card_favorite-label {
+  cursor: pointer;
+  font-size: 22px;
+  margin-left: 12px;
+  width: 36px;
+}
+
+.music-card_favorite-label.checked svg {
+  color: #EC5050;
+  transition: color 0.3s ease;
+}
+
+.music-card_favorite-label svg {
+  color: #444955;
+}
+
+.music-card_audio-player {
+  background-color: #ffffff;
+  border-radius: 99px;
+  padding: 4px;
+}
