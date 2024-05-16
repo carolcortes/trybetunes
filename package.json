@@ -2,6 +2,7 @@
   "name": "trybetunes",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://carolcortes.github.io/trybetunes",
   "engines": {
     "node": "16"
   },
@@ -23,6 +24,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:styles": "npx stylelint '**/*.css'",
@@ -51,6 +54,7 @@
     "eslint-config-trybe-frontend": "^1.2.3",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-sonarjs": "^0.9.1",
+    "gh-pages": "^6.1.1",
     "prop-types": "^15.7.2",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0",
