@@ -6,6 +6,7 @@ import Favorites from '../../pages/Favorites';
 import Profile from '../../pages/Profile';
 import ProfileEdit from '../../pages/ProfileEdit';
 import Search from '../../pages/Search';
+import NotFound from '../../pages/NotFound';
 import './styles.css';
 
 class MainRoutes extends React.Component {
@@ -20,6 +21,7 @@ class MainRoutes extends React.Component {
             <Route exact path="/favorites" component={ Favorites } />
             <Route exact path="/profile" component={ Profile } />
             <Route exact path="/profile/edit" component={ ProfileEdit } />
+            <Route component={ NotFound } />
           </Switch>
         </main>
       </div>

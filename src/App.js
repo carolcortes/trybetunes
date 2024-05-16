@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
 import MainRoutes from './components/MainRoutes/MainRoutes';
-import NotFound from './pages/NotFound';
 
 class App extends React.Component {
   render() {
@@ -10,8 +9,7 @@ class App extends React.Component {
       <div className="App">
         <Switch>
           <Route exact path="/" component={ Login } />
-          <Route component={ MainRoutes } />
-          <Route path="*" component={ NotFound } />
+          <Route path="/" component={ MainRoutes } />
         </Switch>
       </div>
     );
