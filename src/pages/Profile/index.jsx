@@ -31,7 +31,7 @@ class Profile extends React.Component {
     return (
       <div
         data-testid="page-profile"
-        className={`page-profile ${loading ? 'loading' : ''}`}
+        className={ `page-profile ${loading ? 'loading' : ''}` }
       >
         {loading ? (
           <Loading />
